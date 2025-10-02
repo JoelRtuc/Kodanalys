@@ -73,17 +73,17 @@ namespace Kodanalys
 
                     case "4":
                         Console.Write("Ange namn att söka: ");
-                        string nebulousQuery = Console.ReadLine();
-                        bool f00l = false;
+                        string searchedUser = Console.ReadLine();
+                        bool found = false;
                         for (int i = 0; i < amountOfUsers; i++)
                         {
-                            if (allUsers[i] == nebulousQuery)
+                            if (allUsers[i] == searchedUser)
                             {
-                                f00l = true;
+                                found = true;
                                 break;
                             }
                         }
-                        if (f00l)
+                        if (found)
                         {
                             Console.WriteLine("Användaren finns i listan.");
                         }
