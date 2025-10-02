@@ -23,10 +23,10 @@ namespace Kodanalys
                 if (input == "1")
                 {
                     Console.Write("Ange namn: ");
-                    string strUsr = Console.ReadLine();
+                    string user = Console.ReadLine();
                     if (magicConstant < 10)
                     {
-                        celestialWhispers[magicConstant] = strUsr;
+                        celestialWhispers[magicConstant] = user;
                         magicConstant++;
                     }
                     else
