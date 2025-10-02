@@ -52,21 +52,10 @@ namespace Kodanalys
                         {
                             if (allUsers[i] == userToRemove)
                             {
-                                userCount = i;
+                                allUsers[i] = allUsers[i + 1];
+                                amountOfUsers--;
                                 break;
                             }
-                        }
-
-                        if (userCount != -1)
-                        {
-                            for (int i = userCount; i < amountOfUsers - 1; i++)
-                            {
-                                allUsers[i] = allUsers[i + 1];
-                            }
-                            amountOfUsers--;
-                        }
-                        else
-                        {
                             Console.WriteLine("Användaren hittades inte.");
                         }
                         break;
