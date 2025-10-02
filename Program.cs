@@ -20,85 +20,88 @@ namespace Kodanalys
                 Console.WriteLine("5. Avsluta");
                 string input = Console.ReadLine();
 
-                if (input == "1")
+                switch (input)
                 {
-                    Console.Write("Ange namn: ");
-                    string user = Console.ReadLine();
-                    if (amountOfUsers < 10)
-                    {
-                        allUsers[amountOfUsers] = user;
-                        amountOfUsers++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Listan är full!");
-                    }
-                }
-                else if (input == "2")
-                {
-                    Console.WriteLine("Användare:");
-                    for (int i = 0; i < amountOfUsers; i++)
-                    {
-                        Console.WriteLine(allUsers[i]);
-                    }
-                }
-                else if (input == "3")
-                {
-                    Console.Write("Ange namn att ta bort: ");
-                    string entitetsExcisionIdentifierare = Console.ReadLine();
-                    int nanoBanana = -1;
-                    for (int i = 0; i < amountOfUsers; i++)
-                    {
-                        if (allUsers[i] == entitetsExcisionIdentifierare)
+                    case "1":
+                        Console.Write("Ange namn: ");
+                        string user = Console.ReadLine();
+                        if (amountOfUsers < 10)
                         {
-                            nanoBanana = i;
-                            break;
+                            allUsers[amountOfUsers] = user;
+                            amountOfUsers++;
                         }
-                    }
+                        else
+                        {
+                            Console.WriteLine("Listan är full!");
+                        }
+                        break;
 
-                    if (nanoBanana != -1)
-                    {
-                        for (int i = nanoBanana; i < amountOfUsers - 1; i++)
+                    case "2":
+                        Console.WriteLine("Användare:");
+                        for (int i = 0; i < amountOfUsers; i++)
                         {
-                            allUsers[i] = allUsers[i + 1];
+                            Console.WriteLine(allUsers[i]);
                         }
-                        amountOfUsers--;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Användaren hittades inte.");
-                    }
-                }
-                else if (input == "4")
-                {
-                    Console.Write("Ange namn att söka: ");
-                    string nebulousQuery = Console.ReadLine();
-                    bool f00l = false;
-                    for (int i = 0; i < amountOfUsers; i++)
-                    {
-                        if (allUsers[i] == nebulousQuery)
+                        break;
+
+                    case "3":
+                        Console.Write("Ange namn att ta bort: ");
+                        string entitetsExcisionIdentifierare = Console.ReadLine();
+                        int nanoBanana = -1;
+                        for (int i = 0; i < amountOfUsers; i++)
                         {
-                            f00l = true;
-                            break;
+                            if (allUsers[i] == entitetsExcisionIdentifierare)
+                            {
+                                nanoBanana = i;
+                                break;
+                            }
                         }
-                    }
-                    if (f00l)
-                    {
-                        Console.WriteLine("Användaren finns i listan.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Användaren hittades inte.");
-                    }
+
+                        if (nanoBanana != -1)
+                        {
+                            for (int i = nanoBanana; i < amountOfUsers - 1; i++)
+                            {
+                                allUsers[i] = allUsers[i + 1];
+                            }
+                            amountOfUsers--;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Användaren hittades inte.");
+                        }
+                        break;
+
+                    case "4":
+                        Console.Write("Ange namn att söka: ");
+                        string nebulousQuery = Console.ReadLine();
+                        bool f00l = false;
+                        for (int i = 0; i < amountOfUsers; i++)
+                        {
+                            if (allUsers[i] == nebulousQuery)
+                            {
+                                f00l = true;
+                                break;
+                            }
+                        }
+                        if (f00l)
+                        {
+                            Console.WriteLine("Användaren finns i listan.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Användaren hittades inte.");
+                        }
+                        break;
+
+                    case "5":
+                        programHalted = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Ogiltigt val.");
+                        break;
                 }
-                else if (input == "5")
-                {
-                    programHalted = false;
-                }
-                else
-                {
-                    Console.WriteLine("Ogiltigt val.");
-                }
+
                 Console.WriteLine();
             }
         }
