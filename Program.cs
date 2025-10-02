@@ -46,20 +46,20 @@ namespace Kodanalys
 
                     case "3":
                         Console.Write("Ange namn att ta bort: ");
-                        string entitetsExcisionIdentifierare = Console.ReadLine();
-                        int nanoBanana = -1;
+                        string userToRemove = Console.ReadLine();
+                        int userCount = -1;
                         for (int i = 0; i < amountOfUsers; i++)
                         {
-                            if (allUsers[i] == entitetsExcisionIdentifierare)
+                            if (allUsers[i] == userToRemove)
                             {
-                                nanoBanana = i;
+                                userCount = i;
                                 break;
                             }
                         }
 
-                        if (nanoBanana != -1)
+                        if (userCount != -1)
                         {
-                            for (int i = nanoBanana; i < amountOfUsers - 1; i++)
+                            for (int i = userCount; i < amountOfUsers - 1; i++)
                             {
                                 allUsers[i] = allUsers[i + 1];
                             }
